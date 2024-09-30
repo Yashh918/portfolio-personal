@@ -9,7 +9,7 @@ dotenv.config({
 
 const router = Router();
 const app = express();
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 5000
 
 app.use(cors());
 app.use(express.json());
@@ -20,7 +20,7 @@ app.listen(port, () => console.log("Server running on port 5000"));
 const contactEmail = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: process.env.EMAIL_USER,  // Use environment variables for sensitive info
+        user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
     }
 });
