@@ -29,7 +29,8 @@ const Contact = () => {
         setButtonText("Sending...");
 
         try {
-            let response = await fetch("http://localhost:5000/contact", {
+            const liveUrl = "https://portfolio-yashh.onrender.com"
+            let response = await fetch(liveUrl, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json;charset=utf-8",
