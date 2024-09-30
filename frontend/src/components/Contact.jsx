@@ -29,8 +29,8 @@ const Contact = () => {
         setButtonText("Sending...");
 
         try {
-            // const liveUrl = "https://portfolio-yashh.onrender.com"
-            const liveUrl = "http://localhost:5000"
+            const liveUrl = "https://portfolio-yashh.onrender.com"
+            // const liveUrl = "http://localhost:5000"
 
             // // fetching token first for auth
             // const tokenResponse = await fetch(`${liveUrl}/auth/token`);
