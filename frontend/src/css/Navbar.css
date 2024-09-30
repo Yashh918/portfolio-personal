@@ -1,0 +1,166 @@
+.navbar {
+    width: 100%;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    transition: all 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-scrolled {
+    background-color: rgba(1, 11, 24, 0.7);
+    backdrop-filter: blur(1rem);
+}
+
+.navbar-hidden {
+    transform: translateY(-100%);
+    transition: transform 0.6s ease-in-out;
+}
+
+.navbar-visible {
+    transform: translateY(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.navbar-brand {
+    width: 10%;
+}
+
+.navbar-logo {
+    font-weight: 300;
+    color: #fff !important;
+    padding: 0 1rem !important;
+    font-size: 2rem;
+}
+
+.navbar-link {
+    font-weight: 400;
+    color: #fff !important;
+    padding: 0 1rem !important;
+    font-size: 1.5rem;
+    opacity: 0.5;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.active-navbar-link {
+    font-weight: 400;
+    color: #f2ff00 !important;
+    padding: 0 1rem !important;
+    font-size: 1.5rem;
+    opacity: 1;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.navbar-text {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon {
+    cursor: pointer;
+    margin-right: 0.7rem;
+}
+
+.social-svg-icon,
+.social-svg-mask {
+    transition: fill 0.4s ease-in-out !important;
+}
+
+/* github icon */
+.github .social-svg-icon {
+    fill: #dddddd !important;
+
+    &:hover {
+        fill: #ffffff !important;
+    }
+}
+
+.github .social-svg-mask {
+    fill: #24292e !important;
+
+    &:hover {
+        fill: #293a3d !important;
+    }
+}
+
+/* linkedin icon */
+.linkedin .social-svg-icon {
+    fill: #eeeeee !important;
+
+    &:hover {
+        fill: #ffffff !important;
+    }
+}
+
+.linkedin .social-svg-mask {
+    fill: #007fb1 !important;
+
+    &:hover {
+        fill: #02a6d8 !important;
+
+    }
+}
+
+/* upwork icon */
+.upwork .social-svg-icon {
+    fill: #eeeeee !important;
+
+    &:hover {
+        fill: #ffffff !important;
+    }
+}
+
+.upwork .social-svg-mask {
+    fill: #3da800 !important;
+
+    &:hover {
+        fill: #52c415 !important;
+    }
+}
+
+.navbar-connect {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff !important;
+    background-color: transparent;
+    padding: 1rem 1.5rem !important;
+    border: 1px solid white;
+    border-radius: 0;
+    transition: box-shadow 0.4s ease-in-out, border-radius 0.4s ease-in;
+
+    &:hover {
+        box-shadow: inset 12rem 0 0 0 #fff;
+        color: #121212 !important;
+        border-radius: 2.5rem 0.5rem;
+        border: none;
+    }
+}
+
+
+.navbar-toggler {
+    background-color: lightyellow;
+    backdrop-filter: blur(1rem);
+    border-radius: 25%;
+    padding: 0.6rem;
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+        border: none;
+    }
+}

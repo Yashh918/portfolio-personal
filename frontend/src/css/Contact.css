@@ -1,0 +1,169 @@
+.contact {
+    margin: 10rem 2rem 2rem;
+}
+
+.contact-div {
+    padding: 2rem;
+}
+
+.contact .title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 3rem 3rem;
+}
+
+.contact .image-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact .box {
+    width: 100%;
+
+    &:first-child {
+        margin-bottom: 4rem;
+    }
+}
+
+@media (min-width: 64rem) {
+    .contact .box {
+        width: 49%;
+        padding: 1rem;
+        margin: 0;
+    }
+}
+
+.contact .row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+
+.contact .col {
+    padding: 0rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact .half {
+    width: 100%;
+}
+
+@media (min-width: 64rem) {
+    .contact .half {
+        width: 48.5%;
+
+        &:first-child {
+            margin-right: 3%;
+        }
+    }
+}
+
+.contact input[type='text'],
+.contact input[type='email'],
+.contact input[type='tel'],
+.contact textarea {
+    background-color: rgba(118, 177, 255, 0.1);
+    backdrop-filter: blur(0.1rem);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 1rem 1.5rem;
+    margin: 0.5rem 0;
+    font-size: 1.3rem;
+    width: 100%;
+    appearance: none;
+    &:focus {
+        outline: none;
+    }
+}
+
+.contact textarea {
+    min-height: 9rem;
+}
+
+.contact .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact img {
+    width: 100%;
+    border-radius: 3rem;
+    z-index: 1;
+}
+
+.button-container{
+    position: relative;
+    width: 9rem;
+    height: 4rem;
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: border 1s ease-out;
+    &:hover{
+        border: 1px solid white;
+    }
+}
+
+.contact .button-container button {
+    width: 100%;
+    height: 100%;
+    font-size: 1.3rem;
+    font-weight: 700;
+    background: #eee;
+    mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+    mask-size: 2300% 100%;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    animation: ani2 0.6s steps(22) forwards;
+
+    &:hover{
+        animation: ani 0.6s steps(22) forwards;
+    }
+}
+@keyframes ani {
+    from {
+      mask-position: 0 0;
+    }
+    to {
+      mask-position: 100% 0;
+    }
+}
+@keyframes ani2 {
+    from {
+      mask-position: 100% 0;
+    }
+    to {
+      mask-position: 0 0;
+    }
+}
+
+.contact .button-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contact .success{
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: green;
+}
+
+.contact .danger{
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: red;
+}

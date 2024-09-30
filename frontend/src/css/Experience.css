@@ -1,0 +1,75 @@
+.experience {
+    margin: 15rem 2rem;
+}
+
+.experience-div{
+    padding: 2rem;
+}
+
+.experience .title{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 3rem 3rem;
+}
+
+.experience .exp{
+    margin: 1rem auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+@media (min-width: 64rem) {
+    .experience .exp {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.experience .year{
+    color: #d0d0d0;
+    width: 100%;
+    font-size: 1.2rem;
+}
+@media (min-width: 64rem){
+    .experience .year{
+        width: 20%;
+    }
+}
+
+.experience .info{
+    margin-top: 0.5rem;
+    width: 100%;
+}
+@media (min-width: 64rem){
+    .experience .info{
+        margin-top: 0rem;
+        width: 50%;
+    }
+}
+
+.experience .role{
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.experience .description{
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.experience .tech-div{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.experience .tech{
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.4rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 5  00;
+    background-color: rgba(60, 58, 65, 0.46);
+    color: rgb(148, 112, 216);
+}

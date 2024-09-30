@@ -1,0 +1,70 @@
+.project {
+    margin: 15rem 2rem;
+}
+
+.project-div{
+    padding: 2rem;
+}
+
+.project .title{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 3rem 3rem;
+}
+
+.project .proj{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project .name{
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 1rem;
+    width: 100%;
+}
+@media (min-width: 64rem){
+    .project .name{
+        width: 35%;
+    }
+}
+
+.proj .name a{
+    text-decoration: none;
+    color: white;
+}
+
+.project .info{
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+    width: 100%;
+}
+@media (min-width: 64rem){
+    .project .info{
+        width: 40%;
+    }
+}
+
+.project .description{
+    margin-bottom: 0;
+}
+
+.project .tech-div{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project .tech{
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 400;
+    background-color: rgba(60, 58, 65, 0.46);
+    color: rgb(148, 112, 216);
+}
