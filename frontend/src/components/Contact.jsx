@@ -29,19 +29,28 @@ const Contact = () => {
         setButtonText("Sending...");
 
         try {
-            const liveUrl = "https://portfolio-yashh.onrender.com"
-            let response = await fetch(liveUrl, {
+            // const liveUrl = "https://portfolio-yashh.onrender.com"
+            const liveUrl = "http://localhost:5000"
+
+            // // fetching token first for auth
+            // const tokenResponse = await fetch(`${liveUrl}/auth/token`);
+            // const { token } = await tokenResponse.json();
+            // console.log(token);
+            
+
+            // now sending contact form data with token as auth header
+            let response = await fetch(`${liveUrl}/contact`, {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json;charset=utf-8",
+                    "Content-Type": "application/json",
+                    // "Authorization": `Bearer ${token}`
                 },
                 body: JSON.stringify(formDetails),
             });
 
-            setButtonText("Send");
-
             let result = await response.json();
             setFormDetails(formInitialDetails);
+            setButtonText("Send");
 
             if (result.code === 200) {
                 setStatus({ success: true, message: "Message sent successfully" });
@@ -52,8 +61,7 @@ const Contact = () => {
             setVisible(true)
             setTimeout(() => {
                 setVisible(false);
-              }, 4000);
-
+            }, 4000);
         } catch (error) {
             setStatus({ success: false, message: "Something went wrong" });
         }
@@ -77,9 +85,9 @@ const Contact = () => {
                                 <div className="col">
                                     <div className="half">
                                         <motion.input
-                                            whileInView={{opacity:1, y:0}}
-                                            initial={{opacity:0, y:-90}}
-                                            transition={{duration:1, delay:0}}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            initial={{ opacity: 0, y: -90 }}
+                                            transition={{ duration: 1, delay: 0 }}
                                             type="text"
                                             value={formDetails.firstName}
                                             placeholder="First name"
@@ -89,9 +97,9 @@ const Contact = () => {
                                     </div>
                                     <div className="half">
                                         <motion.input
-                                            whileInView={{opacity:1, y:0}}
-                                            initial={{opacity:0, y:-90}}
-                                            transition={{duration:1, delay:0.1}}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            initial={{ opacity: 0, y: -90 }}
+                                            transition={{ duration: 1, delay: 0.1 }}
                                             type="text"
                                             value={formDetails.lastName}
                                             placeholder="Last name"
@@ -101,9 +109,9 @@ const Contact = () => {
                                 </div>
                                 <div className="col">
                                     <motion.input
-                                        whileInView={{opacity:1, x:0}}
-                                        initial={{opacity:0, x:-90}}
-                                        transition={{duration:1, delay:0.2}}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        initial={{ opacity: 0, x: -90 }}
+                                        transition={{ duration: 1, delay: 0.2 }}
                                         type="tel"
                                         value={formDetails.phone}
                                         placeholder="Phone Number"
@@ -112,9 +120,9 @@ const Contact = () => {
                                 </div>
                                 <div className="col">
                                     <motion.input
-                                        whileInView={{opacity:1, x:0}}
-                                        initial={{opacity:0, x:90}}
-                                        transition={{duration:1, delay:0.3}}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        initial={{ opacity: 0, x: 90 }}
+                                        transition={{ duration: 1, delay: 0.3 }}
                                         type="email"
                                         value={formDetails.email}
                                         placeholder="Email"
@@ -124,9 +132,9 @@ const Contact = () => {
                                 </div>
                                 <div className="col">
                                     <motion.input
-                                        whileInView={{opacity:1, x:0}}
-                                        initial={{opacity:0, x:-90}}
-                                        transition={{duration:1, delay:0.4}}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        initial={{ opacity: 0, x: -90 }}
+                                        transition={{ duration: 1, delay: 0.4 }}
                                         type="text"
                                         value={formDetails.subject}
                                         placeholder="Subject"
@@ -136,9 +144,9 @@ const Contact = () => {
                                 </div>
                                 <div className="col">
                                     <motion.textarea
-                                        whileInView={{opacity:1, y:0}}
-                                        initial={{opacity:0, y:90}}
-                                        transition={{duration:1, delay:0.5}}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        initial={{ opacity: 0, y: 90 }}
+                                        transition={{ duration: 1, delay: 0.5 }}
                                         placeholder="Message"
                                         value={formDetails.message}
                                         onChange={(e) => onFormUpdate("message", e.target.value)}
@@ -146,14 +154,14 @@ const Contact = () => {
                                     />
                                 </div>
                                 <div className="col">
-                                    <motion.div 
+                                    <motion.div
                                         className="button-container"
-                                        whileInView={{opacity:1, scale:1}}
-                                        initial={{opacity:0, scale:0.4}}
-                                        transition={{duration:1, delay:0.6}}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        initial={{ opacity: 0, scale: 0.4 }}
+                                        transition={{ duration: 1, delay: 0.6 }}
                                     >
                                         <span className="button-text">{buttonText}</span>
-                                        <button>
+                                        <button disabled={buttonText === "Sending..."}>
                                             {buttonText}
                                         </button>
                                     </motion.div>
