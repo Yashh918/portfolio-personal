@@ -127,7 +127,6 @@ const NavBar = () => {
                             <motion.button
                                 whileTap={{ scale: 0.9 }}
                                 className='navbar-connect'
-                                onClick={() => console.log('connect')}
                             >
                                 Let's connect
                             </motion.button>

@@ -15,7 +15,6 @@ app.use(express.json());
 
 // import routers
 import mailRouter from './routes/mail.routes.js'
-import authRouter from './routes/auth.routes.js'
 
 // import routes
 app.use('/contact', mailRouter)

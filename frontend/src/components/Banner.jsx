@@ -89,7 +89,6 @@ const Banner = () => {
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.9 }}
                                 className='banner-button'
-                                onClick={() => console.log('connect')}
                             >
                                 Let's connect <ArrowRightCircle />
                             </motion.button>

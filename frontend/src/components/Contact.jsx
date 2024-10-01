@@ -30,20 +30,12 @@ const Contact = () => {
 
         try {
             const liveUrl = "https://portfolio-yashh.onrender.com"
-            // const liveUrl = "http://localhost:5000"
-
-            // // fetching token first for auth
-            // const tokenResponse = await fetch(`${liveUrl}/auth/token`);
-            // const { token } = await tokenResponse.json();
-            // console.log(token);
-            
-
-            // now sending contact form data with token as auth header
+           
             let response = await fetch(`${liveUrl}/contact`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    // "Authorization": `Bearer ${token}`
+                    'x-api-key': process.env.REACT_APP_API_KEY  
                 },
                 body: JSON.stringify(formDetails),
             });
