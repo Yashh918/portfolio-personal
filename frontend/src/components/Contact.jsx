@@ -30,12 +30,13 @@ const Contact = () => {
 
         try {
             const liveUrl = "https://portfolio-yashh.onrender.com"
+            // const liveUrl = "http://localhost:3000"
            
             let response = await fetch(`${liveUrl}/contact`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    'x-api-key': process.env.REACT_APP_API_KEY  
+                    'x-api-key': import.meta.env.VITE_REACT_APP_API_KEY  
                 },
                 body: JSON.stringify(formDetails),
             });
