@@ -1,75 +1,117 @@
 .experience {
-    margin: 15rem 2rem;
+    margin: 15rem 1rem;
 }
 
-.experience-div{
-    padding: 2rem;
+.experience-div {
+    padding: 1rem;
 }
 
-.experience .title{
+.experience .title {
     text-align: center;
     font-size: 3rem;
     font-weight: 700;
     padding: 3rem 3rem;
 }
 
-.experience .exp{
-    margin: 1rem auto;
+.experience .exp {
+    margin-bottom: 4em;
     display: flex;
     flex-wrap: wrap;
-}
-@media (min-width: 64rem) {
-    .experience .exp {
-        display: flex;
-        justify-content: center;
-    }
+    justify-content: center;
 }
 
-.experience .year{
+.experience .year {
+    width: 100%;
     color: #d0d0d0;
-    width: 100%;
-    font-size: 1.2rem;
-}
-@media (min-width: 64rem){
-    .experience .year{
-        width: 20%;
-    }
+    font-size: 1.2em;
+    margin-bottom: 0.5rem;
 }
 
-.experience .info{
-    margin-top: 0.5rem;
+.experience .info {
     width: 100%;
 }
-@media (min-width: 64rem){
-    .experience .info{
-        margin-top: 0rem;
-        width: 50%;
-    }
-}
 
-.experience .role{
+.experience .role {
     font-size: 1.3rem;
-    font-weight: 700;
+    font-weight: 500;
 }
 
-.experience .description{
-    font-size: 1.1rem;
-    font-weight: 400;
-    margin-bottom: 0;
+.experience .description {
+    font-size: 1.2em;
+    font-weight: 300;
 }
 
-.experience .tech-div{
+.experience .tech-div {
     display: flex;
     flex-wrap: wrap;
 }
 
-.experience .tech{
-    font-size: 1rem;
-    margin-right: 0.5rem;
-    margin-top: 1rem;
+.experience .tech {
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0.5rem 0.5rem 0 0;
     padding: 0.4rem 1rem;
     border-radius: 0.5rem;
-    font-weight: 5  00;
     background-color: rgba(60, 58, 65, 0.46);
     color: rgb(148, 112, 216);
+}
+
+@media (min-width: 30rem) {
+    .experience .exp {
+        padding: 0 0.5rem;
+    }
+
+    .experience .year {
+        font-size: 1.3em;
+    }
+
+    .experience .role {
+        font-size: 1.4em;
+    }
+
+    .experience .description {
+        font-size: 1.3em;
+    }
+
+    .experience .tech {
+        font-size: 1.1em;
+    }
+}
+
+@media (min-width: 50rem) {
+    .experience .exp {
+        padding: 0 2rem;
+    }
+}
+
+@media (min-width: 64rem) {
+    .experience-div {
+        margin: 0 2rem;
+    }
+
+    .experience .year {
+        width: 30%;
+        margin-right: 6rem;
+        font-size: 1.5em;
+    }
+
+    .experience .info {
+        width: 45%;
+    }
+
+    .experience .year {
+        font-size: 1.5em;
+    }
+
+    .experience .role {
+        font-size: 1.5em;
+    }
+
+    .experience .description {
+        font-size: 1.5em;
+    }
+
+    .experience .tech {
+        font-size: 1.3em;
+    }
 }

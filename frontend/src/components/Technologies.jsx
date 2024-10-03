@@ -30,7 +30,7 @@ const DraggableIcon = ({ children, duration }) => {
         setIsDragging(false);
         setTimeout(() => {
             controls.start("animate"); // Resume the bounce animation with a delay
-          }, 7000);
+        }, 7000);
     };
 
     useEffect(() => {
@@ -47,10 +47,10 @@ const DraggableIcon = ({ children, duration }) => {
             onDragEnd={handleDragStop}
             dragTransition={{ bounceStiffness: 50, bounceDamping: 2 }}
             dragConstraints={{
-                top:0,
-                bottom:0,
-                left:0,
-                right:0
+                top: 0,
+                bottom: 0,
+                left: 0,
+                right: 0
             }}
             dragElastic={0.4}
             style={{
@@ -71,11 +71,11 @@ const Technologies = () => {
                 <h2>
                     Technologies
                 </h2>
-                <motion.div 
+                <motion.div
                     className="tech-icon-div"
-                    whileInView={{opacity:1, y:0}}
-                    initial={{opacity:0, y:50}}
-                    transition={{duration:1}}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 50 }}
+                    transition={{ duration: 1 }}
                 >
 
                     <DraggableIcon duration={2}>

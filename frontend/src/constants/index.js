@@ -1,6 +1,6 @@
 import { link } from "framer-motion/client";
 
-const ABOUT_TEXT = `I'm a full Stack developer with a passion for developing user-friendly web applications.I thrive on new challenges and love learning new things. I have worked with a variety of technologies, including React, Next.js, Node.js, Express.js, PostgreSQL, and MongoDB. While I'm still learning, I am putting great effort into development and high-quality work. Definitely looking forward to taking new challenges and contributing to projects with loads of enthusiasm and a refresher perspective`;
+const ABOUT_TEXT = `I'm a full Stack developer with a passion for developing user-friendly web applications. I thrive on new challenges and love learning new things. I have worked with a variety of technologies, including React, Next.js, Node.js, Express.js, PostgreSQL, and MongoDB. While I'm still learning, I am putting great effort into development and high-quality work. Definitely looking forward to taking new challenges and contributing to projects with loads of enthusiasm and a refresher perspective`;
 
 const EXPERIENCES = [
   {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import contact from '../assets/img/contact-img.svg'
 import { motion } from "framer-motion";
 
@@ -31,12 +31,12 @@ const Contact = () => {
         try {
             const liveUrl = "https://portfolio-yashh.onrender.com"
             // const liveUrl = "http://localhost:3000"
-           
+
             let response = await fetch(`${liveUrl}/contact`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    'x-api-key': import.meta.env.VITE_REACT_APP_API_KEY  
+                    'x-api-key': import.meta.env.VITE_REACT_APP_API_KEY
                 },
                 body: JSON.stringify(formDetails),
             });
@@ -60,17 +60,42 @@ const Contact = () => {
         }
     };
 
+    const [isMobile, setIsMobile] = useState(false)
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 1280)
+        }
+
+        window.addEventListener('resize', handleResize)
+
+        handleResize()
+
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    })
+
     return (
         <section className="contact" id="contact">
             <div className="contact-div">
-                <h2 className="title">
+                <motion.h2
+                    className="title"
+                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 50 }}
+                    transition={{ duration: 1, delay: isMobile ? 0 : 0.2 }}
+                >
                     Contact me
-                </h2>
+                </motion.h2>
                 <div className="image-form">
                     <div className="box">
-                        <div className="image">
+                        <motion.div
+                            whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+                            initial={{ opacity: 0, x: isMobile ? 0 : -50, y: isMobile ? 50 : 0, scale: 0.9 }}
+                            transition={{ duration: 1, delay: 0 }}
+                            className="image"
+                        >
                             <img src={contact} alt="contact_img" />
-                        </div>
+                        </motion.div>
                     </div>
                     <div className="box">
                         <form onSubmit={handleSubmit}>
@@ -78,9 +103,9 @@ const Contact = () => {
                                 <div className="col">
                                     <div className="half">
                                         <motion.input
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            initial={{ opacity: 0, y: -90 }}
-                                            transition={{ duration: 1, delay: 0 }}
+                                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                                            initial={{ opacity: 0, y: isMobile ? 50 : -50, scale: 0.9 }}
+                                            transition={{ duration: 1, delay: 0.1 }}
                                             type="text"
                                             value={formDetails.firstName}
                                             placeholder="First name"
@@ -90,9 +115,9 @@ const Contact = () => {
                                     </div>
                                     <div className="half">
                                         <motion.input
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            initial={{ opacity: 0, y: -90 }}
-                                            transition={{ duration: 1, delay: 0.1 }}
+                                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                                            initial={{ opacity: 0, y: isMobile ? 50 : -50, scale: 0.9 }}
+                                            transition={{ duration: 1, delay: 0.2 }}
                                             type="text"
                                             value={formDetails.lastName}
                                             placeholder="Last name"
@@ -102,9 +127,9 @@ const Contact = () => {
                                 </div>
                                 <div className="col">
                                     <motion.input
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        initial={{ opacity: 0, x: -90 }}
-                                        transition={{ duration: 1, delay: 0.2 }}
+                                        whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+                                        initial={{ opacity: 0, x: isMobile ? 0 : 60, y: isMobile ? 50 : 0, scale: 0.9 }}
+                                        transition={{ duration: 1, delay: 0.3 }}
                                         type="tel"
                                         value={formDetails.phone}
                                         placeholder="Phone Number"
@@ -113,9 +138,9 @@ const Contact = () => {
                                 </div>
                                 <div className="col">
                                     <motion.input
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        initial={{ opacity: 0, x: 90 }}
-                                        transition={{ duration: 1, delay: 0.3 }}
+                                        whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+                                        initial={{ opacity: 0, x: isMobile ? 0 : -60, y: isMobile ? 50 : 0, scale: 0.9 }}
+                                        transition={{ duration: 1, delay: 0.4 }}
                                         type="email"
                                         value={formDetails.email}
                                         placeholder="Email"
@@ -125,9 +150,9 @@ const Contact = () => {
                                 </div>
                                 <div className="col">
                                     <motion.input
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        initial={{ opacity: 0, x: -90 }}
-                                        transition={{ duration: 1, delay: 0.4 }}
+                                        whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+                                        initial={{ opacity: 0, x: isMobile ? 0 : 60, y: isMobile ? 50 : 0, scale: 0.9 }}
+                                        transition={{ duration: 1, delay: 0.5 }}
                                         type="text"
                                         value={formDetails.subject}
                                         placeholder="Subject"
@@ -137,9 +162,9 @@ const Contact = () => {
                                 </div>
                                 <div className="col">
                                     <motion.textarea
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        initial={{ opacity: 0, y: 90 }}
-                                        transition={{ duration: 1, delay: 0.5 }}
+                                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                                        initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                                        transition={{ duration: 1, delay: 0.6 }}
                                         placeholder="Message"
                                         value={formDetails.message}
                                         onChange={(e) => onFormUpdate("message", e.target.value)}
@@ -151,7 +176,7 @@ const Contact = () => {
                                         className="button-container"
                                         whileInView={{ opacity: 1, scale: 1 }}
                                         initial={{ opacity: 0, scale: 0.4 }}
-                                        transition={{ duration: 1, delay: 0.6 }}
+                                        transition={{ duration: 1, delay: 0.7 }}
                                     >
                                         <span className="button-text">{buttonText}</span>
                                         <button disabled={buttonText === "Sending..."}>

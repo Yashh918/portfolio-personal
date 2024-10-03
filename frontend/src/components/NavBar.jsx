@@ -4,7 +4,6 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { SocialIcon } from 'react-social-icons'
 import { motion } from 'framer-motion';
-import { RxHamburgerMenu } from 'react-icons/rx';
 
 const NavBar = () => {
     const [activeLink, setActiveLink] = useState('home')
@@ -59,9 +58,7 @@ const NavBar = () => {
         >
             <Container>
                 <Navbar.Brand href="#home">
-                    {/* <img src={logo} alt="" /> */}
                     <div className='navbar-logo'>Yashh</div>
-                    {/* <div className='navbar-tagline'>Turning bugs into features</div> */}
                 </Navbar.Brand>
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

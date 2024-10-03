@@ -1,11 +1,10 @@
-import { Col, Container, Row } from "react-bootstrap"
 import { ArrowRightCircle } from "react-bootstrap-icons"
 import headerImg from '../assets/img/webcoded/header-img.svg'
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion";
 
 const container = (delay) => ({
-    hidden: { x: -100, opacity: 0 },
+    hidden: { x: 0, opacity: 0 },
     visible: {
         x: [-200, 50, 0],
         opacity: 1,
@@ -55,54 +54,58 @@ const Banner = () => {
 
     return (
         <section className="banner" id="home">
-            <Container>
-                <Row className="align-items-center">
-                    <Col xs={12} md={6} xl={7}>
-                        <motion.span
-                            variants={container(0)}
-                            initial="hidden"
-                            animate="visible"
-                            className="tagline"
-                        >
-                            Welcome to my Portfolio
-                        </motion.span>
-                        <motion.h1
-                            variants={container(0.5)}
-                            initial="hidden"
-                            animate="visible"
-                        >
-                            {`Hi, I'm `}
-                            <span className="wrap">{text}</span>
-                        </motion.h1>
-                        <motion.p
-                            variants={container(1)}
-                            initial="hidden"
-                            animate="visible"
-                        >
-                            Turning bugs into features
-                        </motion.p>
-                        <a href="#contact">
-                            <motion.button
-                                variants={container(1.5)}
+            <div className="banner-div">
+                <div className='text-image'>
+                    <div className='box'>
+                        <div>
+                            <motion.div
+                                variants={container(0)}
                                 initial="hidden"
                                 animate="visible"
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
-                                className='banner-button'
+                                className="tagline"
                             >
-                                Let's connect <ArrowRightCircle />
-                            </motion.button>
-                        </a>
-                    </Col>
-                    <Col xs={12} md={6} xl={5}>
-                        <motion.img 
-                            initial={{ opacity: 0 }}
-                            animate={{opacity:1, transition: {duration:3, delay: 0.5}}}
-                            src={headerImg} 
-                            alt="header image" />
-                    </Col>
-                </Row>
-            </Container>
+                                Welcome to my Portfolio
+                            </motion.div>
+                            <motion.h1
+                                variants={container(0.5)}
+                                initial="hidden"
+                                animate="visible"
+                            >
+                                {`Hi, I'm `}
+                                <span className="wrap">{text}</span>
+                            </motion.h1>
+                            <motion.p
+                                variants={container(1)}
+                                initial="hidden"
+                                animate="visible"
+                            >
+                                Turning bugs into features
+                            </motion.p>
+                            <a href="#contact">
+                                <motion.button
+                                    variants={container(1.5)}
+                                    initial="hidden"
+                                    animate="visible"
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.9 }}
+                                    className='banner-button'
+                                >
+                                    Let's connect <ArrowRightCircle />
+                                </motion.button>
+                            </a>
+                        </div>
+                    </div>
+                    <div className='box'>
+                        <div>
+                            <motion.img
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1, transition: { duration: 3, delay: 0.5 } }}
+                                src={headerImg}
+                                alt="header image" />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     )
 }
