@@ -60,7 +60,7 @@ const Contact = () => {
         }
     };
 
-    const [isMobile, setIsMobile] = useState(false)
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 1280)
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth < 1280)

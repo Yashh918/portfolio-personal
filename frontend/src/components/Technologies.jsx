@@ -1,8 +1,8 @@
 import { motion, useAnimation } from "framer-motion"
 import { useState, useEffect } from "react"
-import { FaJava, FaNode, FaNodeJs, FaReact } from "react-icons/fa"
+import { FaJava, FaNodeJs, FaReact } from "react-icons/fa"
 import { RiNextjsLine } from "react-icons/ri"
-import { SiExpress, SiMongodb, SiMongoose, SiNextdotjs } from "react-icons/si"
+import { SiExpress, SiMongodb } from "react-icons/si"
 
 const iconVariants = (duration, isDragging) => ({
     initial: { y: -10 },

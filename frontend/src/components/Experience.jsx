@@ -3,7 +3,7 @@ import { EXPERIENCES } from '../constants/index.js'
 import { useEffect, useState } from 'react'
 
 const Experience = () => {
-    const [isMobile, setIsMobile] = useState(false)
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 1024)
 
     useEffect(() => {
         const handleResize = () => {

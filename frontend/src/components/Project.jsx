@@ -3,7 +3,7 @@ import { PROJECTS } from '../constants/index.js'
 import { useEffect, useState } from 'react'
 
 const Project = () => {
-    const [isMobile, setIsMobile] = useState(false)
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 1024)
 
     useEffect(() => {
         const handleResize = () => {

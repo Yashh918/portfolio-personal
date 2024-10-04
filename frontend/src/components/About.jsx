@@ -4,7 +4,7 @@ import { ABOUT_TEXT } from '../constants/index.js'
 import { useEffect, useState } from 'react'
 
 const About = () => {
-    const [isMobile, setIsMobile] = useState(false)
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 1200)
 
     useEffect(() => {
         const handleResize = () => {
