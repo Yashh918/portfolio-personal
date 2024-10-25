@@ -53,22 +53,21 @@
 }
 
 .banner-button {
-    font-weight: 700;
-    font-size: 1.1em;
+    font-weight: 600;
+    font-size: 1em;
     color: #fff;
     background-color: transparent;
-    padding: 0.9rem 1.2rem;
-    padding-right: 1.8rem;
+    padding: 0.6rem 1rem;
     overflow: hidden;
     border: 1px solid white;
-    border-radius: 1.2rem;
+    border-radius: 0.9rem;
     display: inline-flex;
     align-items: center;
-    transition: box-shadow 0.6s ease-in-out;
+    transition: box-shadow 0.9s ease-out;
 
     &:hover {
-        box-shadow: inset 16rem 0 0 0 #fff;
-        color: #121212 !important;
+        box-shadow: inset 20rem 0 0 0 #fff;
+        color: #121212;
     }
 }
 
@@ -79,7 +78,21 @@
 }
 
 .banner-button:hover svg {
-    transform: translateX(1rem);
+    animation: button-updown 3s linear infinite;
+}
+
+@keyframes button-updown {
+    0% {
+        transform: translateY(-0.2rem);
+    }
+
+    50% {
+        transform: translateY(0.2rem);
+    }
+
+    100% {
+        transform: translateY(-0.2rem);
+    }
 }
 
 .banner img {
@@ -144,8 +157,7 @@
 
     .banner .banner-button {
         font-size: 1.3em;
-        padding: 1rem 1.4rem;
-        padding-right: 2rem;
+        padding: 1rem 1.2rem;
     }
 }
 
@@ -168,6 +180,6 @@
 
     .banner .banner-button {
         font-size: 1.5em;
-        padding: 1.2rem 1.5rem;
+        padding: 1rem 1.3rem;
     }
 }

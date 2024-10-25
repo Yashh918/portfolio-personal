@@ -1,4 +1,5 @@
 import { ArrowRightCircle } from "react-bootstrap-icons"
+import { TbDownload } from "react-icons/tb";
 import headerImg from '../assets/img/webcoded/header-img.svg'
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion";
@@ -81,7 +82,10 @@ const Banner = () => {
                             >
                                 Turning bugs into features
                             </motion.p>
-                            <a href="#contact">
+                            <a
+                                href=" https://drive.google.com/uc?export=download&id=113FtATV9FHxJJCR_A-DT_zagCm7eD0d-"
+                                download
+                            >
                                 <motion.button
                                     variants={container(1.5)}
                                     initial="hidden"
@@ -90,7 +94,7 @@ const Banner = () => {
                                     whileTap={{ scale: 0.9 }}
                                     className='banner-button'
                                 >
-                                    Let's connect <ArrowRightCircle />
+                                    Download Resume <TbDownload />
                                 </motion.button>
                             </a>
                         </div>
