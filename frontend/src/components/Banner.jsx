@@ -83,7 +83,7 @@ const Banner = () => {
                                 Turning bugs into features
                             </motion.p>
                             <a
-                                href=" https://drive.google.com/uc?export=download&id=113FtATV9FHxJJCR_A-DT_zagCm7eD0d-"
+                                href="https://drive.google.com/drive/folders/110JwGc_mLpn8FWtPY1SJ62R-u1sdEp3T?usp=sharing"
                                 download
                             >
                                 <motion.button
